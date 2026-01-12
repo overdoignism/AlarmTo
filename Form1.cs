@@ -24,7 +24,7 @@ namespace AlarmTo
     public partial class MainForm : Form
     {
         private FormHelp theFormHelp;
-        private readonly BootForm _parentForm;
+        private BootForm _parentForm;
 
         private AudioDevice selectedDevice;
         private int the_Hours = 0;
@@ -32,7 +32,6 @@ namespace AlarmTo
         private int the_Mode = 0;
         private bool AlarmOnOff_bool = false;
         private bool[] week_on = new bool[7]; 
-        private int AlarmStage = 0;
         private readonly Random random = new Random();
 
         //private IWavePlayer waveOut;
@@ -41,6 +40,7 @@ namespace AlarmTo
 
         public string thePID;
         public string theAlarmTitle;
+        public int AlarmIconNum = 0;
         public bool isOneTimeInstance;
         public bool LastWindowIsVisible = false;
 
@@ -56,7 +56,7 @@ namespace AlarmTo
             this.Width = 630;
             this.Height = 530;
             RefresAppTitle("* Settings*");
-            snoozeBTN.Text = "Snooze " + soonzeNum.Value.ToString() + " min";
+            snoozeBTN.Text = "Snooze\n" + soonzeNum.Value.ToString() + " min";
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -166,6 +166,7 @@ namespace AlarmTo
             Properties.Settings.Default.AlarmMsg = AlarmMsgTxtWrite.Text;
             Properties.Settings.Default.AlarmTitle = AlarmTitleTxt.Text;
             Properties.Settings.Default.soonzeMin = soonzeNum.Value;
+            Properties.Settings.Default.AlarmIconNum = AlarmIconNum;
 
             Properties.Settings.Default.Save();             // 2. 提交變更到設定檔案
 
@@ -201,11 +202,13 @@ namespace AlarmTo
             the_Minutes = Properties.Settings.Default.AlarmOnMinute;
             LoopCheck.Checked = Properties.Settings.Default.UseLoop;
             TMCheck.Checked = Properties.Settings.Default.Topmost;
-            
-            if (!(Properties.Settings.Default.soonzeMin == 0))
-            {
-                soonzeNum.Value = Properties.Settings.Default.soonzeMin;
+            soonzeNum.Value = Properties.Settings.Default.soonzeMin;
+
+            if (!isOneTimeInstance) { 
+                AlarmIconNum = Properties.Settings.Default.AlarmIconNum;
+                iconTrack.Value = AlarmIconNum;
             }
+            SelectIcon(AlarmIconNum);
 
             if (!(Properties.Settings.Default.PlayFile == "")) 
             {
@@ -284,6 +287,8 @@ namespace AlarmTo
                 SaveButton.Enabled = false;
                 SaveButton.BackColor = Color.Gray;
                 AlarmTitleTxt.Enabled = false;
+                iconTrack.Enabled = false;
+                AlarmIconNum = 0;
             }
         }
 
@@ -293,11 +298,17 @@ namespace AlarmTo
             SaveSettings();
         }
 
-        private void AlarmOffScreen(bool GoShowSet)
+        private void AlarmOffScreen(bool GoShowSet, bool offAlarm)
         {
-            if (GoShowSet == false)
+            if (!GoShowSet)
             {
                 this.Hide();
+            }
+
+            if (offAlarm)
+            {
+                AlarmOnOff_bool = false;
+                AlarmOnOff_Show();
             }
 
             selectedDevice.StopAlarmSound();
@@ -306,8 +317,8 @@ namespace AlarmTo
             PanelAlarm.Visible = false;
             PanelSet.Enabled = true;
             PanelSet.Visible = true;
-
-            AlarmStage = 1;
+            AlarmShowIng = false;
+            //AlarmStage = 1;
 
             this.TopMost = false;
             RefresAppTitle("* Settings*");
@@ -453,12 +464,14 @@ namespace AlarmTo
                 AlarmOnOff.BackColor = Color.FromArgb(255, 96, 96);
                 AlarmOnOff.ForeColor = Color.White;
                 AlarmOnOff.Text = "ALARM\nON";
+                BootForm.Default.RefreshIcon(AlarmIconNum, true);
             }
             else
             {
                 AlarmOnOff.BackColor = Color.FromArgb(224, 224, 224);
                 AlarmOnOff.ForeColor = Color.Black;
                 AlarmOnOff.Text = "ALARM\nOFF";
+                BootForm.Default.RefreshIcon(AlarmIconNum, false);
             }            
         }
 
@@ -487,51 +500,63 @@ namespace AlarmTo
             }
         }
 
+        private int AlarmStage = 0;
+        private bool AlarmShowIng = false;
+        private DateTime now;
         private void AlarmTimer_Tick(object sender, EventArgs e)
         {
 
-            DateTime now = DateTime.Now;  // 取得當前的日期和時間
-            int minute = now.Minute; // 取得現在是幾分，Minute 屬性自動回傳 0 到 59
+            if (AlarmOnOff_bool == false)
+            { return; }
 
-            if (AlarmOnOff_bool == true)
+            now = DateTime.Now;  // 取得當前的日期和時間
+
+            if (AlarmStage == 0)
             {
-                if (AlarmStage == 0)
-                {
-                    int dayOfWeek = (int)now.DayOfWeek;     // 我們將其轉換為 int
-                    int hour = now.Hour;                    //取得現在是當天的幾時 (24 小時制)，Hour 屬性自動回傳 0 到 23
+                if (the_Minutes == now.Minute && the_Hours == now.Hour && week_on[(int)now.DayOfWeek] == true)
+                {                            
+                        AlarmStage = 1;
+                        AlarmProcess();
+                }
+            }
+            else if (AlarmStage >= 1)
+            {
 
-                    if (the_Minutes == minute && the_Hours == hour && week_on[dayOfWeek] == true)
-                    {                            
-                            AlarmStage = 1;
-                            AlarmProcess();
+                if (AlarmStage == 1)
+                {
+                    if (the_Minutes != now.Minute || the_Hours != now.Hour || week_on[(int)now.DayOfWeek] == false)
+                    {
+                        AlarmStage = 0;
                     }
                 }
-                else if (AlarmStage >= 1)
-                {
-                    NowTimeTxt.Text = now.ToString("HH:mm:ss");
-                    NowWeekTxt.Text = now.ToString("dddd");
-                }
-                
-                if (AlarmStage == 2)
+                else if (AlarmStage == 2)
                 {
                     if (snoozeCount >= snoozeMax)
                     {
-                       AlarmProcess();
-                       AlarmStage = 3;
+                        AlarmStage = 3;
+                        AlarmProcess();
                     }
                     else
                     {
                         snoozeCount++;
                     }
                 }
+
             }
-            
+
+            if (AlarmShowIng)
+            {
+                NowTimeTxt.Text = now.ToString("HH:mm:ss");
+                NowWeekTxt.Text = now.ToString("dddd");
+            }
+
         }
         private void AlarmProcess()
         {
             AlarmShowTxt.Text = AlarmMsgTxtWrite.Text;
             PanelAlarm.Enabled = true;
             PanelAlarm.Visible = true;
+            AlarmShowIng = true;
             PanelSet.Enabled = false;
             PanelSet.Visible = false;
             ButtonTimer.Enabled = false;
@@ -576,7 +601,7 @@ namespace AlarmTo
 
         private void StopAlarmBTN_Click(object sender, EventArgs e)
         {
-            AlarmOffScreen(LastWindowIsVisible);
+            AlarmOffScreen(LastWindowIsVisible, false);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -629,7 +654,7 @@ namespace AlarmTo
 
         private void StopAlarmExitBTN_Click(object sender, EventArgs e)
         {
-            AlarmOffScreen(LastWindowIsVisible);
+            AlarmOffScreen(LastWindowIsVisible, false);
             Application.Exit();
         }
 
@@ -807,8 +832,8 @@ namespace AlarmTo
 
         private void StopAlarmSetBTN_Click(object sender, EventArgs e)
         {
-            LastWindowIsVisible = false;
-            AlarmOffScreen(true);
+            LastWindowIsVisible = true;
+            AlarmOffScreen(true, false);
         }
 
         private int snoozeCount;
@@ -827,13 +852,15 @@ namespace AlarmTo
         {
             if (soonzeNum.Value > 0) 
             {
-                snoozeBTN.Text = "Snooze " + soonzeNum.Value.ToString() + " min";
-                snoozeBTN.Enabled = true;   
+                snoozeBTN.Text = "Snooze\n" + soonzeNum.Value.ToString() + " min";
+                snoozeBTN.Enabled = true;
+                soonzeNum.BackColor = Color.FromArgb(255, 255, 192);
             }
             else
             {
                 snoozeBTN.Text = "Snooze\nDisabled";
                 snoozeBTN.Enabled = false;
+                soonzeNum.BackColor = Color.FromArgb(162, 162, 162);
             }
                         
         }
@@ -1008,5 +1035,45 @@ namespace AlarmTo
         {
             theFormHelp.Show(); 
         }
+
+        private void StopAlarmOffBTN_Click(object sender, EventArgs e)
+        {
+            AlarmOffScreen(LastWindowIsVisible, true);
+        }
+
+        private void iconTrack_Scroll(object sender, EventArgs e)
+        {
+            AlarmIconNum = iconTrack.Value;
+
+            SelectIcon(AlarmIconNum);
+            BootForm.Default.RefreshIcon(AlarmIconNum, AlarmOnOff_bool);
+        }
+
+        public void SelectIcon(int AlarmIconNum2)
+        {
+            switch (AlarmIconNum2)
+            {
+                case 0:
+                    iconBox.Image = Properties.Resources.Bell_oti_off.ToBitmap();
+                    break;
+                case 1:
+                    iconBox.Image = Properties.Resources.Bell_01_off.ToBitmap();
+                    break;
+                case 2:
+                    iconBox.Image = Properties.Resources.Bell_02_off.ToBitmap();
+                    break;
+                case 3:
+                    iconBox.Image = Properties.Resources.Bell_03_off.ToBitmap();
+                    break;
+                case 4:
+                    iconBox.Image = Properties.Resources.Bell_04_off.ToBitmap();
+                    break;
+                case 5:
+                    iconBox.Image = Properties.Resources.Bell_05_off.ToBitmap();
+                    break;
+            }
+        }
+
+
     }
 }

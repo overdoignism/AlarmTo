@@ -238,5 +238,17 @@ namespace AlarmTo.Properties {
                 this["soonzeMin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int AlarmIconNum {
+            get {
+                return ((int)(this["AlarmIconNum"]));
+            }
+            set {
+                this["AlarmIconNum"] = value;
+            }
+        }
     }
 }

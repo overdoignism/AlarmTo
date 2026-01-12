@@ -56,5 +56,8 @@
     <Setting Name="soonzeMin" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
+    <Setting Name="AlarmIconNum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

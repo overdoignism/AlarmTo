@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace AlarmTo
 {
+
     internal static class Program
     {
         /// <summary>

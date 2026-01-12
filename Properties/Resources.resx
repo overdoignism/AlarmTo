@@ -118,7 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BELL_Inst" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\BELL31.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bell_01_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_01_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_01_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_01_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_02_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_02_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_02_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_02_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_03_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_03_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_03_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_03_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_04_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_04_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_04_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_04_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_05_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_05_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_05_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_05_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_oti_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_oti_off.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bell_oti_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\Bell_oti_on.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

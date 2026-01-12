@@ -13,28 +13,36 @@ namespace AlarmTo
 {
     public partial class BootForm : Form
     {
-
+        private static BootForm _default;
         private string thePID;
         private string theTitle;
         private bool isOneTimeInstance = false;
 
-        //private Form mainAlarmForm;
         private MainForm mainAlarmForm;
         private FormHelp theFormHelp;
+        public static BootForm Default
+        {
+            get
+            {
+                // 如果表單不存在或已被銷毀，就重新 new 一個
+                if (_default == null || _default.IsDisposed)
+                {
+                    _default = new BootForm();
+                }
+                return _default;
+            }
+        }
 
         public BootForm()
         {
             InitializeComponent();
             this.Width = 0;
             this.Height= 0;
+            _default = this;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-            thePID = GetFormattedHexPid();
-            mainAlarmForm = new MainForm(this);
-            theFormHelp = new FormHelp();
 
             string[] argv = Environment.GetCommandLineArgs(); // argv[0] = 程式路徑
 
@@ -50,11 +58,18 @@ namespace AlarmTo
 
             string tooltipStr = "\nDouble-Click→Main\nRight-Click→Menu";
 
+            thePID = GetFormattedHexPid();
+            mainAlarmForm = new MainForm(this);
+            theFormHelp = new FormHelp();
+            mainAlarmForm.isOneTimeInstance = isOneTimeInstance;
+            mainAlarmForm.thePID = thePID;
+
             if (isOneTimeInstance)
             {
-                notifyIcon1.Icon = Properties.Resources.BELL_Inst;
                 thePID = "Instance-" + thePID;
                 notifyIcon1.Text = "AlarmTo [" + thePID.ToString() + "]" + tooltipStr;
+                RefreshIcon(0, false);
+                mainAlarmForm.SelectIcon(0);
             }
             else
             {
@@ -68,9 +83,6 @@ namespace AlarmTo
                     notifyIcon1.Text = "AlarmTo [" + theTitle + "]" + tooltipStr;
                 }
             }
-
-            mainAlarmForm.isOneTimeInstance = isOneTimeInstance;
-            mainAlarmForm.thePID = thePID;
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -141,6 +153,37 @@ namespace AlarmTo
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to relaunch: " + ex.Message);
+            }
+        }
+
+        public void RefreshIcon(int AlarmIconNum, bool AlarmIsOn)
+        {
+            switch (AlarmIconNum)
+            {
+                case 0:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_oti_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_oti_off; }
+                    break;
+                case 1:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_01_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_01_off; }
+                    break;
+                case 2:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_02_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_02_off; }
+                    break;
+                case 3:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_03_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_03_off; }
+                    break;
+                case 4:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_04_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_04_off; }
+                    break;
+                case 5:
+                    if (AlarmIsOn) { this.notifyIcon1.Icon = Properties.Resources.Bell_05_on; }
+                    else { this.notifyIcon1.Icon = Properties.Resources.Bell_05_off; }
+                    break;
             }
         }
 

@@ -51,6 +51,7 @@
             // ContextMenuStrip1
             // 
             this.ContextMenuStrip1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuItem,
             this.runInstMenuItem,
@@ -59,14 +60,14 @@
             this.ContextMenuStrip1.Name = "ContextMenuStrip1";
             this.ContextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.ContextMenuStrip1.ShowImageMargin = false;
-            this.ContextMenuStrip1.Size = new System.Drawing.Size(187, 114);
+            this.ContextMenuStrip1.Size = new System.Drawing.Size(337, 172);
             this.ContextMenuStrip1.Text = "Exit";
             // 
             // mainMenuItem
             // 
             this.mainMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainMenuItem.Name = "mainMenuItem";
-            this.mainMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.mainMenuItem.Size = new System.Drawing.Size(336, 42);
             this.mainMenuItem.Text = "Main Window";
             this.mainMenuItem.Click += new System.EventHandler(this.showMenuItem_Click);
             // 
@@ -74,7 +75,7 @@
             // 
             this.runInstMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runInstMenuItem.Name = "runInstMenuItem";
-            this.runInstMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.runInstMenuItem.Size = new System.Drawing.Size(336, 42);
             this.runInstMenuItem.Text = "One-time Instance";
             this.runInstMenuItem.Click += new System.EventHandler(this.runInstMenuItem_Click);
             // 
@@ -82,7 +83,7 @@
             // 
             this.helpMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.helpMenuItem.Size = new System.Drawing.Size(336, 42);
             this.helpMenuItem.Text = "Help && License";
             this.helpMenuItem.Click += new System.EventHandler(this.helpMenuItem_Click);
             // 
@@ -90,7 +91,7 @@
             // 
             this.exitMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(336, 42);
             this.exitMenuItem.Text = "End";
             this.exitMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 

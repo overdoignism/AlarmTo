@@ -22,7 +22,7 @@ namespace AlarmTo.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AlarmTo.Properties {
         ///   傳回這個類別使用的快取的 ResourceManager 執行個體。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlarmTo.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace AlarmTo.Properties {
         ///   使用這個強類型資源類別的資源查閱。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,9 +63,119 @@ namespace AlarmTo.Properties {
         /// <summary>
         ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Icon BELL_Inst {
+        public static System.Drawing.Icon Bell_01_off {
             get {
-                object obj = ResourceManager.GetObject("BELL_Inst", resourceCulture);
+                object obj = ResourceManager.GetObject("Bell_01_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_01_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_01_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_02_off {
+            get {
+                object obj = ResourceManager.GetObject("Bell_02_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_02_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_02_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_03_off {
+            get {
+                object obj = ResourceManager.GetObject("Bell_03_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_03_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_03_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_04_off {
+            get {
+                object obj = ResourceManager.GetObject("Bell_04_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_04_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_04_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_05_off {
+            get {
+                object obj = ResourceManager.GetObject("Bell_05_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_05_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_05_on", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_oti_off {
+            get {
+                object obj = ResourceManager.GetObject("Bell_oti_off", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 (圖示) 的類型 System.Drawing.Icon 當地語系化資源。
+        /// </summary>
+        public static System.Drawing.Icon Bell_oti_on {
+            get {
+                object obj = ResourceManager.GetObject("Bell_oti_on", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
