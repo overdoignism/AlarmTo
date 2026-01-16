@@ -148,10 +148,10 @@
             this.SaveButton.BackColor = System.Drawing.Color.Turquoise;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(706, 788);
+            this.SaveButton.Location = new System.Drawing.Point(685, 788);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(6);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(152, 146);
+            this.SaveButton.Size = new System.Drawing.Size(160, 146);
             this.SaveButton.TabIndex = 5;
             this.SaveButton.Text = "Save";
             this.toolTip1.SetToolTip(this.SaveButton, "Save alarm settings");
@@ -427,10 +427,10 @@
             this.AlarmOnOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.AlarmOnOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AlarmOnOff.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlarmOnOff.Location = new System.Drawing.Point(1034, 546);
+            this.AlarmOnOff.Location = new System.Drawing.Point(1027, 546);
             this.AlarmOnOff.Margin = new System.Windows.Forms.Padding(6);
             this.AlarmOnOff.Name = "AlarmOnOff";
-            this.AlarmOnOff.Size = new System.Drawing.Size(152, 228);
+            this.AlarmOnOff.Size = new System.Drawing.Size(159, 228);
             this.AlarmOnOff.TabIndex = 12;
             this.AlarmOnOff.Text = "ALARM OFF";
             this.toolTip1.SetToolTip(this.AlarmOnOff, "Alarm on/off");
@@ -474,18 +474,18 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(220)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.WeekAlarm6);
-            this.panel2.Controls.Add(this.WeekAlarm0);
-            this.panel2.Controls.Add(this.WeekAlarm1);
             this.panel2.Controls.Add(this.WeekAlarm5);
-            this.panel2.Controls.Add(this.WeekAlarm2);
-            this.panel2.Controls.Add(this.WeekAlarm3);
             this.panel2.Controls.Add(this.WeekAlarm4);
+            this.panel2.Controls.Add(this.WeekAlarm3);
+            this.panel2.Controls.Add(this.WeekAlarm2);
+            this.panel2.Controls.Add(this.WeekAlarm1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.WeekAlarm0);
             this.panel2.Location = new System.Drawing.Point(18, 388);
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1002, 144);
+            this.panel2.Size = new System.Drawing.Size(998, 144);
             this.panel2.TabIndex = 16;
             // 
             // AlarmTimer
@@ -527,15 +527,15 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.iconTrack);
             this.panel6.Controls.Add(this.iconBox);
-            this.panel6.Location = new System.Drawing.Point(1032, 388);
+            this.panel6.Location = new System.Drawing.Point(1027, 388);
             this.panel6.Margin = new System.Windows.Forms.Padding(6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(154, 146);
+            this.panel6.Size = new System.Drawing.Size(159, 146);
             this.panel6.TabIndex = 32;
             // 
             // iconTrack
             // 
-            this.iconTrack.Location = new System.Drawing.Point(23, 85);
+            this.iconTrack.Location = new System.Drawing.Point(25, 85);
             this.iconTrack.Maximum = 5;
             this.iconTrack.Minimum = 1;
             this.iconTrack.Name = "iconTrack";
@@ -547,7 +547,7 @@
             // iconBox
             // 
             this.iconBox.BackColor = System.Drawing.Color.Black;
-            this.iconBox.Location = new System.Drawing.Point(45, 13);
+            this.iconBox.Location = new System.Drawing.Point(47, 13);
             this.iconBox.Name = "iconBox";
             this.iconBox.Size = new System.Drawing.Size(64, 64);
             this.iconBox.TabIndex = 0;
@@ -565,14 +565,14 @@
             this.panel5.Location = new System.Drawing.Point(734, 546);
             this.panel5.Margin = new System.Windows.Forms.Padding(6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(286, 226);
+            this.panel5.Size = new System.Drawing.Size(282, 226);
             this.panel5.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(154, 64);
+            this.label2.Location = new System.Drawing.Point(149, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 45);
@@ -609,7 +609,7 @@
             // 
             this.soonzeNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.soonzeNum.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soonzeNum.Location = new System.Drawing.Point(38, 62);
+            this.soonzeNum.Location = new System.Drawing.Point(33, 62);
             this.soonzeNum.Margin = new System.Windows.Forms.Padding(6);
             this.soonzeNum.Maximum = new decimal(new int[] {
             30,
@@ -633,10 +633,10 @@
             this.button1.BackColor = System.Drawing.Color.Turquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(542, 788);
+            this.button1.Location = new System.Drawing.Point(514, 788);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 146);
+            this.button1.Size = new System.Drawing.Size(160, 146);
             this.button1.TabIndex = 30;
             this.button1.Text = "Help";
             this.toolTip1.SetToolTip(this.button1, "End the program");
@@ -669,7 +669,7 @@
             this.TestPlayBtn.Size = new System.Drawing.Size(142, 116);
             this.TestPlayBtn.TabIndex = 23;
             this.TestPlayBtn.Text = "Test";
-            this.toolTip1.SetToolTip(this.TestPlayBtn, "Remove file from list");
+            this.toolTip1.SetToolTip(this.TestPlayBtn, "Test sound");
             this.TestPlayBtn.UseVisualStyleBackColor = false;
             this.TestPlayBtn.Click += new System.EventHandler(this.TestPlayBtn_Click);
             // 
@@ -781,7 +781,7 @@
             this.panel3.Location = new System.Drawing.Point(18, 788);
             this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(498, 144);
+            this.panel3.Size = new System.Drawing.Size(484, 144);
             this.panel3.TabIndex = 19;
             // 
             // SwW_cln_BTN
@@ -792,7 +792,7 @@
             this.SwW_cln_BTN.Location = new System.Drawing.Point(330, 72);
             this.SwW_cln_BTN.Margin = new System.Windows.Forms.Padding(6);
             this.SwW_cln_BTN.Name = "SwW_cln_BTN";
-            this.SwW_cln_BTN.Size = new System.Drawing.Size(150, 54);
+            this.SwW_cln_BTN.Size = new System.Drawing.Size(138, 54);
             this.SwW_cln_BTN.TabIndex = 21;
             this.SwW_cln_BTN.Text = "Clean";
             this.SwW_cln_BTN.UseVisualStyleBackColor = false;
@@ -806,7 +806,7 @@
             this.SwW_dis_BTN.Location = new System.Drawing.Point(172, 72);
             this.SwW_dis_BTN.Margin = new System.Windows.Forms.Padding(6);
             this.SwW_dis_BTN.Name = "SwW_dis_BTN";
-            this.SwW_dis_BTN.Size = new System.Drawing.Size(150, 54);
+            this.SwW_dis_BTN.Size = new System.Drawing.Size(138, 54);
             this.SwW_dis_BTN.TabIndex = 20;
             this.SwW_dis_BTN.Text = "Off";
             this.SwW_dis_BTN.UseVisualStyleBackColor = false;
@@ -820,7 +820,7 @@
             this.SwW_en_BTN.Location = new System.Drawing.Point(14, 72);
             this.SwW_en_BTN.Margin = new System.Windows.Forms.Padding(6);
             this.SwW_en_BTN.Name = "SwW_en_BTN";
-            this.SwW_en_BTN.Size = new System.Drawing.Size(150, 54);
+            this.SwW_en_BTN.Size = new System.Drawing.Size(138, 54);
             this.SwW_en_BTN.TabIndex = 19;
             this.SwW_en_BTN.Text = "On";
             this.SwW_en_BTN.UseVisualStyleBackColor = false;
@@ -832,7 +832,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(172)))));
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(62, 14);
+            this.label6.Location = new System.Drawing.Point(47, 15);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(398, 45);
@@ -844,10 +844,10 @@
             this.ExitBtn.BackColor = System.Drawing.Color.Turquoise;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(870, 788);
+            this.ExitBtn.Location = new System.Drawing.Point(856, 788);
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(152, 146);
+            this.ExitBtn.Size = new System.Drawing.Size(160, 146);
             this.ExitBtn.TabIndex = 17;
             this.ExitBtn.Text = "End";
             this.toolTip1.SetToolTip(this.ExitBtn, "End the program");
@@ -859,12 +859,12 @@
             this.MinBtn.BackColor = System.Drawing.Color.Aquamarine;
             this.MinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinBtn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinBtn.Location = new System.Drawing.Point(1034, 788);
+            this.MinBtn.Location = new System.Drawing.Point(1027, 788);
             this.MinBtn.Margin = new System.Windows.Forms.Padding(6);
             this.MinBtn.Name = "MinBtn";
-            this.MinBtn.Size = new System.Drawing.Size(152, 146);
+            this.MinBtn.Size = new System.Drawing.Size(160, 146);
             this.MinBtn.TabIndex = 18;
-            this.MinBtn.Text = "▾Hide";
+            this.MinBtn.Text = "Hide";
             this.toolTip1.SetToolTip(this.MinBtn, "Hide the window");
             this.MinBtn.UseVisualStyleBackColor = false;
             this.MinBtn.Click += new System.EventHandler(this.MinBtn_Click);
@@ -1012,11 +1012,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1374, 968);
+            this.ClientSize = new System.Drawing.Size(1370, 964);
             this.ControlBox = false;
-            this.Controls.Add(this.PanelSet);
             this.Controls.Add(this.PanelAlarm);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Controls.Add(this.PanelSet);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -53,10 +53,28 @@ namespace AlarmTo
             PopulateAudioDevices();
             LoadSettings();
             AlarmOnOff_Show();
-            this.Width = 630;
-            this.Height = 530;
             RefresAppTitle("* Settings*");
             snoozeBTN.Text = "Snooze\n" + soonzeNum.Value.ToString() + " min";
+            MinBtn.Text = "Hide\n▼";
+
+            // 1. 定義你心目中完美的「總高度」(例如 500)
+            int targetTotalHeight = 516;
+            int targetTotalWidth = 616;
+
+            // 取得標題列高度 (Caption)
+            int captionHeight = SystemInformation.CaptionHeight;
+
+            // 取得視窗邊框寬度 (如果是可調整大小的視窗，使用 FrameSizingPoint)
+            int borderHeight = SystemInformation.FixedFrameBorderSize.Height;
+            // 或者如果是可縮放視窗：
+            int resizableBorderHeight = SystemInformation.FrameBorderSize.Height;
+
+            // 最終計算
+            this.ClientSize = new Size(
+                targetTotalWidth - (borderHeight * 2),
+                targetTotalHeight - captionHeight - (borderHeight * 2)
+            );
+
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
